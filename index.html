@@ -1,135 +1,1 @@
 
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقع للتدريب علي js</title>
-  <meta name="description" content="موقع دينا للأزياء والجمال - تسوق أزياء أنيقة ومنتجات تجميل عالية الجودة.">
-  <meta name="keywords" content="أزياء, جمال, تسوق, متجر, دينا">
-  <!-- ربط ملف الـ CSS -->
-  <link rel="stylesheet" href="new.css">
-</head>
-<body>
-
-  <header>
-    <h1>🧥 متجر دينا للأزياء والجمال</h1>
-    <nav>
-      <a href="https://www.facebook.com" target="_blank">فيسبوك</a>
-      <a href="https://www.instagram.com" target="_blank">انستجرام</a>
-      <a href="https://www.twitter.com" target="_blank">تويتر</a>
-      <a href="https://www.youtube.com" target="_blank">يوتيوب</a>
-    </nav>
-  </header>
-
-  <section class="description">
-    <h2>عن الموقع</h2>
-    <p>مرحبًا بكِ في عالم دينا للأزياء! 🧚‍♀️ هنا هتلاقي كل الجديد في الموضة والستايل العصري، مع لمسة تجميل تكمّل طلتك!</p>
-  </section>
-
-  <section class="clothes">
-    <h2>🛍️ تشكيلتنا</h2>
-    <div class="gallery">
-      <div class="product">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWa4IwOKNqqW2NpcujUrf_ff9rCIiDx0KfWQ&s" alt="فستان أنيق">
-        <button class="add-to-cart" data-price="100">أضف إلى السلة</button>
-      </div>
-      <div class="product">
-        <img src="https://dfcdn.defacto.com.tr/376/D6921A8_25SP_BK27_01_01.jpg" alt="جاكيت شيك">
-        <button class="add-to-cart" data-price="150">أضف إلى السلة</button>
-      </div>
-<div class="product">
-  <img src="https://i.ytimg.com/vi/YZcgmraL5IM/mqdefault.jpg" alt="تيشيرت كاجوال" class="product-img">
-  <button class="add-to-cart" data-price="80">أضف إلى السلة</button>
-</div>
-
-    </div>
-  </section>
-
-  <!-- عرض السلة -->
-  <section class="cart">
-    <h2>السلة</h2>
-    <p>عدد المنتجات في السلة: <span id="cart-count">0</span></p>
-    <p>السعر الكلي: <span id="total-price">0</span> جنيه</p>
-  </section>
-  
-  <section class="beauty">
-    <h2>💄 قسم الجمال</h2>
-    <p>هنا تلاقي ميكاب، عطور، وسكين كير تخليكي دايمًا مشرقة!</p>
-  </section>
-
-  <section class="order-form">
-    <h2>📝 سجل واطلب دلوقتي</h2>
-    <form id="orderForm">
-      <label for="name">الاسم الكامل:</label>
-      <input type="text" id="name" name="name" required />
-  
-      <label for="phone">رقم الهاتف:</label>
-      <input type="tel" id="phone" name="phone" required />
-  
-      <label for="email">الإيميل:</label>
-      <input type="email" id="email" name="email" required />
-  
-      <label for="address">العنوان:</label>
-      <input type="text" id="address" name="address" required />
-  
-      <label for="category">نوع الطلب:</label>
-      <select id="category" name="category">
-        <option value="fashion">ملابس</option>
-        <option value="beauty">منتجات تجميل</option>
-      </select>
-  
-      <label for="message">ملاحظات إضافية:</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-  
-      <button type="submit">إرسال الطلب</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>جميع الحقوق محفوظة &copy; دينا 2025</p>
-  </footer>
-
-  <!-- ربط ملف الـ JavaScript -->
-  <script src="new.js"></script>
-  <script>
-    // JavaScript لزيادة عدد المنتجات في السلة
-    let cartCount = 0;
-    let totalPrice = 0;
-
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    const cartCountElement = document.getElementById('cart-count');
-    const totalPriceElement = document.getElementById('total-price');
-
-    addToCartButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        cartCount++;
-        totalPrice += parseFloat(button.getAttribute('data-price'));
-        cartCountElement.textContent = cartCount;
-        totalPriceElement.textContent = totalPrice.toFixed(2);
-      });
-    });
-
-    // التحقق من صحة البيانات
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("orderForm");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const address = document.getElementById("address").value.trim();
-
-        if (!name || !phone || !email || !address) {
-          alert("من فضلك املى كل البيانات المطلوبة 💡");
-          return;
-        }
-
-        form.reset();
-      });
-    });
-  </script>
-</body>
-</html>
