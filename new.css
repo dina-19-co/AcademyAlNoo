@@ -1,243 +1,173 @@
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  direction: rtl;
-  background-color: #f8f9fa;
-  color: #333;
+* {
   margin: 0;
   padding: 0;
-  font-size: 16px; /* استخدام حجم خط مرن */
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
 }
 
-/* الهيدر */
+body {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  padding: 20px;
+}
+
 header {
-  background-color: #8e44ad;
-  color: white;
-  padding: 20px 0;
   text-align: center;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
-  margin: 0;
   font-size: 2.5em;
-  letter-spacing: 1px;
+  color: #ff4b5c;
 }
 
-header nav {
-  margin-top: 10px;
-}
-
-header nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
+header p {
   font-size: 1.2em;
-  transition: color 0.3s ease;
+  color: #aaa;
 }
 
-header nav a:hover {
-  color: #fce5cd;
-}
-
-/* عن الموقع */
-.description {
-  background-color: #fff;
-  text-align: center;
-  padding: 30px;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-.description h2 {
-  color: #8e44ad;
-}
-
-.description p {
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* المعرض */
-.clothes {
-  margin: 40px 0;
-  text-align: center;
-}
-
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.gallery img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.1);
-}
-
-/* قسم الجمال */
-.beauty {
-  background-color: #f5e6fa;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.beauty h2 {
-  color: #8e44ad;
-}
-
-.beauty p {
-  color: #555;
-  font-size: 1.2em;
-}
-
-/* الفورم */
-.order-form {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0 20px;
-}
-
-.order-form h2 {
-  color: #8e44ad;
-  margin-bottom: 20px;
-}
-
-.order-form form {
+.platforms {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 40px;
 }
 
-.order-form input, .order-form textarea, .order-form select {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 1em;
-}
-
-.order-form button {
-  background-color: #8e44ad;
-  color: white;
-  padding: 15px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease;
-}
-
-.order-form button:hover {
-  background-color: #6c3483;
-}
-
-/* الفوتر */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
+.platform-card {
+  background-color: #2a2a40;
+  border-radius: 20px;
   padding: 20px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: 40px;
-  font-size: 0.9em;
+  box-shadow: 0 0 15px #00000080;
+  animation: fadeInUp 1s ease forwards;
 }
 
-/* المنتجات */
-.product {
+.platform-info h2 {
+  color: #ffb400;
+  margin-bottom: 10px;
+}
+
+.platform-info p {
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.courses-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  background-color: #3a3a5f;
+  border-radius: 15px;
+  padding: 15px;
+  width: 250px;
+  transition: transform 0.3s;
+  animation: fadeIn 1s ease;
+  text-align: center;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+.course-card img {
   width: 100%;
-  max-width: 250px;
-}
-
-.product-img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  height: 150px;
+  object-fit: cover;
 }
 
-.product-img:hover {
-  transform: scale(1.1);
+.course-card h3 {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #fff;
 }
 
-.add-to-cart {
-  background-color: #8e44ad;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
+.course-card a {
+  display: block;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  background-color: #ff4b5c;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.add-to-cart:hover {
-  background-color: #6c3483;
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #777;
 }
 
-/* تحسين التوافق مع الأجهزة الصغيرة */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1e1e2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: 0.8s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff4b5c;
+  animation: shrink 1.2s ease forwards;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-
-  .product {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .gallery {
+  .courses-list {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
   }
 
-  .order-form input, .order-form textarea, .order-form select {
-    font-size: 0.9em;
-  }
-
-  .order-form button {
-    font-size: 1em;
+  .course-card {
+    width: 90%;
   }
 }
-
-@media (max-width: 480px) {
-  header nav a {
-    font-size: 1em;
-  }
-
-  .product {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .product-img {
-    max-width: 100%;
-  }
-
-  .gallery img {
-    width: 100%;
-  }
-}  
