@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تواصل معنا - أكاديمية النور</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      color: #004d40;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.2rem;
+      color: #388e3c;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      display: block;
+      text-align: right;
+    }
+
+    input,
+    textarea,
+    button {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #004d40;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #00332e;
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+      margin: 0.3rem 0;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #388e3c;
+      font-weight: bold;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #2e7d32;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="contact-section">
+    <h2>تواصل معنا</h2>
+
+    <div class="contact-info">
+      <p>واتساب: <a href="https://wa.me/201033258639" target="_blank">01033258639</a></p>
+      <p>مكالمات: 01018543238</p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="فيسبوك">فيسبوك</a>
+      <a href="https://www.youtube.com/yourchannel" target="_blank" aria-label="يوتيوب">يوتيوب</a>
+    </div>
+
+    <form id="contactForm">
+      <label for="name">الاسم الكامل</label>
+      <input type="text" id="name" name="name" placeholder="ادخل اسمك الكامل" required />
+
+      <label for="email">البريد الإلكتروني</label>
+      <input type="email" id="email" name="email" placeholder="ادخل بريدك الإلكتروني" required />
+
+      <label for="message">رسالتك</label>
+      <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('تم استلام رسالتك بنجاح! سيتم التواصل معك قريباً.');
+      contactForm.reset();
+    });
+  </script>
+</body>
+
+</html>

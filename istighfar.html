@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الاستغفار - أكاديمية النور</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .istighfar-section {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #004d40;
+    }
+
+    .istighfar-section h2 {
+      font-size: 2.2rem;
+      color: #388e3c;
+      margin-bottom: 1rem;
+    }
+
+    .dhikr-text {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .counter-box {
+      background-color: #e0f2f1;
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 300px;
+      margin: 1rem auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .count {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #004d40;
+    }
+
+    .btn-istighfar {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-istighfar:hover {
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="istighfar-section">
+    <h2>حلقة الاستغفار والتسبيح</h2>
+    <div class="dhikr-text" id="dhikr-text">
+      أستغفر الله العظيم وأتوب إليه
+    </div>
+
+    <div class="counter-box">
+      <div class="count" id="count">0</div>
+      <button class="btn-istighfar" onclick="increaseCount()">سبح</button>
+      <br /><br />
+      <button class="btn-istighfar" style="background-color:#c62828" onclick="resetCount()">إعادة</button>
+    </div>
+  </section>
+
+  <script>
+    const dhikrPhrases = [
+      "أستغفر الله العظيم وأتوب إليه",
+      "سبحان الله وبحمده",
+      "اللهم صل على محمد",
+      "لا إله إلا الله وحده لا شريك له",
+      "الحمد لله رب العالمين"
+    ];
+    let currentPhraseIndex = 0;
+
+    const dhikrTextEl = document.getElementById("dhikr-text");
+    let count = 0;
+    const countEl = document.getElementById("count");
+
+    function increaseCount() {
+      count++;
+      countEl.textContent = count;
+      if (count % 33 === 0) {
+        currentPhraseIndex = (currentPhraseIndex + 1) % dhikrPhrases.length;
+        dhikrTextEl.textContent = dhikrPhrases[currentPhraseIndex];
+        count = 0;
+        countEl.textContent = count;
+      }
+    }
+
+    function resetCount() {
+      count = 0;
+      countEl.textContent = count;
+      currentPhraseIndex = 0;
+      dhikrTextEl.textContent = dhikrPhrases[0];
+    }
+  </script>
+</body>
+
+</html>

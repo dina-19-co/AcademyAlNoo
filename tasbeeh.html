@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التسبيح - أكاديمية النور</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tasbeeh-section {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .tasbeeh-section h2 {
+      font-size: 2.2rem;
+      color: #388e3c;
+    }
+
+    .dhikr {
+      font-size: 1.5rem;
+      margin: 2rem 0;
+      color: #004d40;
+    }
+
+    .counter-box {
+      background-color: #e0f2f1;
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 300px;
+      margin: 1rem auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .count {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #004d40;
+    }
+
+    .btn-tasbeeh {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-tasbeeh:hover {
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="tasbeeh-section">
+    <h2>سبحة إلكترونية</h2>
+    <div class="dhikr">سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر</div>
+
+    <div class="counter-box">
+      <div class="count" id="count">0</div>
+      <button class="btn-tasbeeh" onclick="increaseCount()">سَبِّح</button>
+      <br><br>
+      <button class="btn-tasbeeh" style="background-color:#c62828" onclick="resetCount()">إعادة</button>
+    </div>
+  </section>
+
+  <script>
+    let count = 0;
+    const countEl = document.getElementById("count");
+
+    function increaseCount() {
+      count++;
+      countEl.textContent = count;
+    }
+
+    function resetCount() {
+      count = 0;
+      countEl.textContent = count;
+    }
+  </script>
+</body>
+
+</html>

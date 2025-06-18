@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>معرض الصور والجداول - أكاديمية النور</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      color: #004d40;
+    }
+
+    .gallery-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #388e3c;
+      margin-bottom: 2rem;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .tab {
+      padding: 0.8rem 1.5rem;
+      background-color: #e0f2f1;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #004d40;
+      transition: background-color 0.3s;
+    }
+
+    .tab.active,
+    .tab:hover {
+      background-color: #388e3c;
+      color: white;
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    .images-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .images-gallery img {
+      max-width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .images-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #388e3c;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="gallery-section">
+    <h2>معرض الصور وجداول الحصص</h2>
+    <div class="tabs">
+      <div class="tab active" data-tab="children">الأطفال</div>
+      <div class="tab" data-tab="preparatory">الإعدادي</div>
+      <div class="tab" data-tab="secondary">الثانوي</div>
+      <div class="tab" data-tab="university">الجامعات</div>
+    </div>
+
+    <!-- الأطفال -->
+    <div class="content-section active" id="children">
+      <div class="images-gallery">
+        <img src="images/children1.jpg" alt="نشاط الأطفال 1" />
+        <img src="images/children2.jpg" alt="نشاط الأطفال 2" />
+        <img src="images/children3.jpg" alt="نشاط الأطفال 3" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>الوقت</th>
+            <th>المادة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>السبت</td><td>4 - 6 مساءً</td><td>تحفيظ قرآن</td></tr>
+          <tr><td>الأحد</td><td>4 - 6 مساءً</td><td>تفسير مبسط</td></tr>
+          <tr><td>الاثنين</td><td>4 - 6 مساءً</td><td>تسبيح واستغفار</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- الإعدادي -->
+    <div class="content-section" id="preparatory">
+      <div class="images-gallery">
+        <img src="images/prep1.jpg" alt="نشاط إعدادي 1" />
+        <img src="images/prep2.jpg" alt="نشاط إعدادي 2" />
+        <img src="images/prep3.jpg" alt="نشاط إعدادي 3" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>الوقت</th>
+            <th>المادة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>السبت</td><td>5 - 7 مساءً</td><td>تحفيظ قرآن</td></tr>
+          <tr><td>الأحد</td><td>5 - 7 مساءً</td><td>تفسير</td></tr>
+          <tr><td>الاثنين</td><td>5 - 7 مساءً</td><td>تسبيح واستغفار</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- الثانوي -->
+    <div class="content-section" id="secondary">
+      <div class="images-gallery">
+        <img src="images/sec1.jpg" alt="نشاط ثانوي 1" />
+        <img src="images/sec2.jpg" alt="نشاط ثانوي 2" />
+        <img src="images/sec3.jpg" alt="نشاط ثانوي 3" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>الوقت</th>
+            <th>المادة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>السبت</td><td>6 - 8 مساءً</td><td>تحفيظ قرآن</td></tr>
+          <tr><td>الأحد</td><td>6 - 8 مساءً</td><td>تفسير متقدم</td></tr>
+          <tr><td>الاثنين</td><td>6 - 8 مساءً</td><td>تسبيح واستغفار</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- الجامعات -->
+    <div class="content-section" id="university">
+      <div class="images-gallery">
+        <img src="images/univ1.jpg" alt="نشاط جامعات 1" />
+        <img src="images/univ2.jpg" alt="نشاط جامعات 2" />
+        <img src="images/univ3.jpg" alt="نشاط جامعات 3" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>الوقت</th>
+            <th>المادة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>السبت</td><td>7 - 9 مساءً</td><td>تحفيظ قرآن</td></tr>
+          <tr><td>الأحد</td><td>7 - 9 مساءً</td><td>تفسير متقدم</td></tr>
+          <tr><td>الاثنين</td><td>7 - 9 مساءً</td><td>تسبيح واستغفار</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.content-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === tab.dataset.tab) {
+            section.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

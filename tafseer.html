@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تفسير القرآن - أكاديمية النور</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .tafseer-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      color: #004d40;
+    }
+
+    .tafseer-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #388e3c;
+      margin-bottom: 1.5rem;
+    }
+
+    .surah-list {
+      list-style: none;
+      padding: 0;
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+
+    .surah-list li {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .surah-list li:hover {
+      background-color: #e0f2f1;
+    }
+
+    .tafseer-content {
+      margin-top: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #222;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="tafseer-section">
+    <h2>تفسير القرآن الكريم</h2>
+    <ul class="surah-list" id="surahList">
+      <li data-surah="الفاتحة">سورة الفاتحة</li>
+      <li data-surah="البقرة">سورة البقرة</li>
+      <li data-surah="آل عمران">سورة آل عمران</li>
+      <li data-surah="الناس">سورة الناس</li>
+      <li data-surah="الفلق">سورة الفلق</li>
+    </ul>
+    <div class="tafseer-content" id="tafseerContent">
+      اختر سورة لعرض تفسيرها هنا.
+    </div>
+  </section>
+
+  <script>
+    const tafseers = {
+      "الفاتحة": `سورة الفاتحة هي فاتحة الكتاب، تبدأ بالحمد لله رب العالمين، وهي دعاء وطلب هداية من الله.`,
+      "البقرة": `سورة البقرة هي أطول سور القرآن، تحتوي على أحكام وتشريعات وتوجيهات للمسلمين.`,
+      "آل عمران": `سورة آل عمران تتحدث عن العقيدة والتوحيد وأحداث معركة بدر وأحوال المؤمنين.`,
+      "الناس": `سورة الناس تدعو إلى الاستعاذة بالله من شر الوسواس الخناس.`,
+      "الفلق": `سورة الفلق تدعو إلى الاستعاذة بالله من شر المخلوقات والظلام والحسد.`
+    };
+
+    const surahList = document.getElementById("surahList");
+    const tafseerContent = document.getElementById("tafseerContent");
+
+    surahList.addEventListener("click", (e) => {
+      if (e.target.tagName === "LI") {
+        const surahName = e.target.getAttribute("data-surah");
+        tafseerContent.textContent = tafseers[surahName];
+      }
+    });
+  </script>
+</body>
+
+</html>

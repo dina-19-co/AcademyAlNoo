@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تسجيل الدورات - أكاديمية النور</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .courses-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      color: #004d40;
+    }
+
+    .courses-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #388e3c;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input,
+    select,
+    button,
+    textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    button {
+      background-color: #004d40;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #00332e;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="courses-section">
+    <h2>تسجيل الدورات</h2>
+    <form id="registrationForm">
+      <label for="name">الاسم الكامل</label>
+      <input type="text" id="name" name="name" placeholder="ادخل اسمك الكامل" required />
+
+      <label for="phone">رقم الهاتف</label>
+      <input type="tel" id="phone" name="phone" placeholder="ادخل رقم الهاتف" required />
+
+      <label for="category">الفئة</label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected>اختر الفئة</option>
+        <option value="أطفال">أطفال</option>
+        <option value="إعدادي">إعدادي</option>
+        <option value="ثانوي">ثانوي</option>
+        <option value="جامعات">جامعات</option>
+      </select>
+
+      <label for="course">الدورة</label>
+      <select id="course" name="course" required>
+        <option value="" disabled selected>اختر الدورة</option>
+        <option value="تحفيظ القرآن">تحفيظ القرآن</option>
+        <option value="التسبيح والاستغفار">التسبيح والاستغفار</option>
+        <option value="تفسير القرآن">تفسير القرآن</option>
+      </select>
+
+      <label for="notes">ملاحظات (اختياري)</label>
+      <textarea id="notes" name="notes" placeholder="أي ملاحظات أو طلبات"></textarea>
+
+      <button type="submit">تقديم</button>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('تم إرسال طلب التسجيل بنجاح! سيتم التواصل معكم قريباً.');
+      form.reset();
+    });
+  </script>
+</body>
+
+</html>
